@@ -1,0 +1,63 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/adrianwarrior/Desktop/TRYBE/Peak Invest/back-end/API/API.csproj": {}
+  },
+  "projects": {
+    "/home/adrianwarrior/Desktop/TRYBE/Peak Invest/back-end/API/API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/adrianwarrior/Desktop/TRYBE/Peak Invest/back-end/API/API.csproj",
+        "projectName": "API",
+        "projectPath": "/home/adrianwarrior/Desktop/TRYBE/Peak Invest/back-end/API/API.csproj",
+        "packagesPath": "/home/adrianwarrior/.nuget/packages/",
+        "outputPath": "/home/adrianwarrior/Desktop/TRYBE/Peak Invest/back-end/API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/adrianwarrior/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
