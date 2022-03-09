@@ -8,7 +8,7 @@ public class WeatherForecastController : ControllerBase
 {
 
 
-  [HttpGet(Name = "GetWeatherForecast")]
+  [HttpGet()]
   public List<KeyValuePair<int, string>> Get()
   {
     BrothersList brothers = new BrothersList();
@@ -16,6 +16,29 @@ public class WeatherForecastController : ControllerBase
     return brothers.GetList();
   }
 
+  [HttpGet("1")]
+  public KeyValuePair<int, string> Get1()
+  {
+    BrothersList brothers = new BrothersList();
+
+    return brothers.GetList()[0];
+  }
+
+  [HttpGet("2")]
+  public KeyValuePair<int, string> Get2()
+  {
+    BrothersList brothers = new BrothersList();
+
+    return brothers.GetList()[1];
+  }
+
+  [HttpGet("3")]
+  public KeyValuePair<int, string> Get3()
+  {
+    BrothersList brothers = new BrothersList();
+
+    return brothers.GetList()[2];
+  }
 
   public double Post([FromBody] string str)
   {
