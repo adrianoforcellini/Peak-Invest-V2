@@ -22,7 +22,9 @@ public class WeatherForecastController : ControllerBase
     int number = Int32.Parse(key);
     return brothers.GetList()[number - 1];
   }
-  public double Post([FromBody] string str)
+
+  [HttpPost()]
+  public double CalculateValue([FromBody] string str)
   {
     string input = str;
     string installments = input.Substring(0, 3);
