@@ -11,16 +11,14 @@ public class WeatherForecastController : ControllerBase
   public List<KeyValuePair<int, string>> Get()
   {
     BrothersList brothers = new BrothersList();
-
     return brothers.GetList();
   }
 
   [HttpGet("{key}")]
-  public KeyValuePair<int, string> Get1([FromRoute] string key)
+  public KeyValuePair<int, string> Get1([FromRoute] int key)
   {
     BrothersList brothers = new BrothersList();
-    int number = Int32.Parse(key);
-    return brothers.GetList()[number - 1];
+    return brothers.GetList()[key - 1];
   }
 
   [HttpPost()]
@@ -35,7 +33,6 @@ public class WeatherForecastController : ControllerBase
 
     double multiplyValues = n1 * n2;
     double addFivePercent = (multiplyValues * 1.05);
-
 
     return addFivePercent;
   }
