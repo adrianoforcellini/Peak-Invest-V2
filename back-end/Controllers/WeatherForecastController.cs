@@ -6,8 +6,13 @@ namespace back_end.Controllers;
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
 {
-  public string Post([FromBody] string value)
+  public double Post([FromBody] string value)
   {
-    return value;
+    string input = value;
+    int num = Int32.Parse(input);
+    double add = num + (num * 0.15);
+    // System.Console.WriteLine(add);
+
+    return add;
   }
 }
