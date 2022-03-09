@@ -7,7 +7,6 @@ namespace back_end.Controllers;
 public class WeatherForecastController : ControllerBase
 {
 
-
   [HttpGet()]
   public List<KeyValuePair<int, string>> Get()
   {
@@ -16,30 +15,13 @@ public class WeatherForecastController : ControllerBase
     return brothers.GetList();
   }
 
-  [HttpGet("1")]
-  public KeyValuePair<int, string> Get1()
+  [HttpGet("{key}")]
+  public KeyValuePair<int, string> Get1([FromRoute] string key)
   {
     BrothersList brothers = new BrothersList();
-
-    return brothers.GetList()[0];
+    int number = Int32.Parse(key);
+    return brothers.GetList()[number - 1];
   }
-
-  [HttpGet("2")]
-  public KeyValuePair<int, string> Get2()
-  {
-    BrothersList brothers = new BrothersList();
-
-    return brothers.GetList()[1];
-  }
-
-  [HttpGet("3")]
-  public KeyValuePair<int, string> Get3()
-  {
-    BrothersList brothers = new BrothersList();
-
-    return brothers.GetList()[2];
-  }
-
   public double Post([FromBody] string str)
   {
     string input = str;
@@ -52,7 +34,6 @@ public class WeatherForecastController : ControllerBase
     double multiplyValues = n1 * n2;
     double addFivePercent = (multiplyValues * 1.05);
 
-    // System.Console.WriteLine(createList());
 
     return addFivePercent;
   }
