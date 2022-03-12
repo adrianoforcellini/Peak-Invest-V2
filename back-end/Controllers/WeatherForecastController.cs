@@ -22,18 +22,12 @@ public class WeatherForecastController : ControllerBase
   }
 
   [HttpPost()]
-  public double CalculateValue([FromBody] string str)
+  public double CalculateValue([FromBody] CalculationForm calculationForm)
+
   {
-    string input = str;
-    string installments = input.Substring(0, 3);
-    string value = input.Substring(3);
-
-    int n1 = Int32.Parse(installments);
-    double n2 = Convert.ToDouble(value);
-
-    double multiplyValues = n1 * n2;
-    double addFivePercent = (multiplyValues * 1.05);
-
-    return addFivePercent;
+    int installments = calculationForm.installments;
+    double value = calculationForm.value;
+    double result = (installments * value) * 1.05;
+    return result;
   }
 }
