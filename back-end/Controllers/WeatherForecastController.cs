@@ -15,7 +15,7 @@ public class WeatherForecastController : ControllerBase
   }
 
   [HttpGet("{key}")]
-  public KeyValuePair<int, string> Get1([FromRoute] int key)
+  public KeyValuePair<int, string> GetByKey([FromRoute] int key)
   {
     BrothersList brothers = new BrothersList();
     return brothers.GetList()[key - 1];
