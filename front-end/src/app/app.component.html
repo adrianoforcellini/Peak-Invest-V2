@@ -15,9 +15,10 @@
     <label for="value">Valor De Cada Parcela</label>
     <input type="text" formControlName="value" /><br /><br />
     <button [disabled]="!calculationForm.valid">Enviar</button>
-    <label>Você Pagará:</label>
-    <input class="oi" value="1" />
   </form>
+  <br />
+  <label>Você Pagará:</label><br />
+  <input value="{{ totalValue | currency: 'BRL' }}" />
 </div>
 
 <!-- <router-outlet></router-outlet> -->

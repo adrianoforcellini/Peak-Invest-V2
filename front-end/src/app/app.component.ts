@@ -12,6 +12,7 @@ export class AppComponent {
 
   public calculationForm: FormGroup;
   baseUrl = "https://localhost:7042";
+  public totalValue = 0;
 
   constructor(private fb: FormBuilder, private http: HttpClient
   ) {
@@ -38,7 +39,7 @@ export class AppComponent {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(this.calculationForm.value)
-    }).then(response => response.json()).then(result => console.log(result))
+    }).then(response => response.json()).then(result => this.totalValue = result)
   }
 
   async getByKey(key) {
