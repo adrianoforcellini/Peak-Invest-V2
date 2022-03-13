@@ -11,9 +11,9 @@
     (submit)="calculationSubmit()"
   >
     <label for="installments">Numero De Parcelas</label>
-    <input type="text" formControlName="installments" /><br /><br />
+    <input type="number" formControlName="installments" /><br /><br />
     <label for="value">Valor De Cada Parcela</label>
-    <input type="text" formControlName="value" /><br /><br />
+    <input type="number" formControlName="value" /><br /><br />
     <button [disabled]="!calculationForm.valid">Enviar</button>
   </form>
   <br />
