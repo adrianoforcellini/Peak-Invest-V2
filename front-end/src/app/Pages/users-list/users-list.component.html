@@ -1,1 +1,29 @@
-<p>users-list works!</p>
+<form
+  class="users-list-form"
+  [formGroup]="usersListForm"
+  (submit)="submitForm()"
+>
+  <label for="value"
+    ><p>
+      Digite um Número Entre 1 e 3 Para Buscar o Usuário, ou 0 Para Trazer Toda
+      a Lista
+    </p> </label
+  ><br />
+  <input
+    type="number"
+    class="users-list-input"
+    formControlName="usersListValue"
+  />
+  <br /><br />
+  <button [disabled]="!usersListForm.valid">Enviar</button>
+</form>
+<table border="1">
+  <tr>
+    <td>Key</td>
+    <td>Name</td>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{ user.key }}</td>
+    <td>{{ user.value }}</td>
+  </tr>
+</table>

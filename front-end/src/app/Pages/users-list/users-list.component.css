@@ -1,0 +1,12 @@
+.users-list-form {
+  align-self: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.users-list-input {
+  width: 25vw;
+}

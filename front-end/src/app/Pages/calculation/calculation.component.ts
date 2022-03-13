@@ -40,7 +40,9 @@ export class CalculationComponent {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(this.calculationForm.value)
-    }).then(response => response.json()).then(result => this.totalValue = result)
+    }).
+      then(response => response.json()).
+      then(result => this.totalValue = result)
   }
 
 
