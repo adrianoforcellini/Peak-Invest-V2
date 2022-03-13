@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class CalculationComponent {
 
   public calculationForm: FormGroup;
-  baseUrl = "https://localhost:7042";
+  public baseUrl = environment.baseUrl
   public totalValue = 0;
 
   constructor(private fb: FormBuilder, private http: HttpClient
@@ -40,18 +41,6 @@ export class CalculationComponent {
       },
       body: JSON.stringify(this.calculationForm.value)
     }).then(response => response.json()).then(result => this.totalValue = result)
-  }
-
-  async getByKey(key) {
-    await fetch(`${this.baseUrl}/${key}`)
-      .then(response => response.text())
-      .then(result => console.log(result))
-  }
-
-  async getAll() {
-    await fetch(`${this.baseUrl}`)
-      .then(response => response.text())
-      .then(result => console.log(result))
   }
 
 
