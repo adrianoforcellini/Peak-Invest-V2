@@ -6,12 +6,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersListComponent } from './Pages/users-list/users-list.component';
 import { CalculationComponent } from './Pages/calculation/calculation.component';
+import { HomeComponent } from './Pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersListComponent,
-    CalculationComponent
+    CalculationComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
