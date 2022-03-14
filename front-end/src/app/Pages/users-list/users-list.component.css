@@ -11,6 +11,11 @@
   width: 25vw;
 }
 
+.users-list-bk-container {
+  width: 63.5vw;
+  margin-left: 18%;
+}
+
 .users-list-bk {
   background-image: url("https://www.peakinvest.com.br/wp-content/uploads/2019/03/imagem_investidor.jpg");
   background-position: center;
@@ -21,8 +26,7 @@
   background-color: rgba(0, 0, 255, 0.411);
   color: white;
   height: 100vh;
-  width: 970px;
-  margin-left: 255px;
+  width: 63.5vw;
 }
 
 .users-list-page {

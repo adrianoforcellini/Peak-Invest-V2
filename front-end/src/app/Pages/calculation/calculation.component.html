@@ -1,23 +1,25 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <section class="calculation-page">
-  <div class="calculation-bk">
-    <div class="calculation-bk-transparency">
-      <div style="text-align: center">
-        <br />
-        <form
-          class="inputs"
-          [formGroup]="calculationForm"
-          (submit)="calculationSubmit()"
-        >
-          <label for="installments">Numero De Parcelas</label>
-          <input type="number" formControlName="installments" /><br /><br />
-          <label for="value">Valor De Cada Parcela</label>
-          <input type="number" formControlName="value" /><br /><br />
-          <button [disabled]="!calculationForm.valid">Enviar</button>
-        </form>
-        <br />
-        <label>Você Pagará:</label><br />
-        <input value="{{ totalValue | currency: 'BRL' }}" />
+  <div class="calculation-bk-container">
+    <div class="calculation-bk">
+      <div class="calculation-bk-transparency">
+        <div style="text-align: center">
+          <br />
+          <form
+            class="inputs"
+            [formGroup]="calculationForm"
+            (submit)="calculationSubmit()"
+          >
+            <label for="installments">Numero De Parcelas</label>
+            <input type="number" formControlName="installments" /><br /><br />
+            <label for="value">Valor De Cada Parcela</label>
+            <input type="number" formControlName="value" /><br /><br />
+            <button [disabled]="!calculationForm.valid">Enviar</button>
+          </form>
+          <br />
+          <label>Você Pagará:</label><br />
+          <input value="{{ totalValue | currency: 'BRL' }}" />
+        </div>
       </div>
     </div>
   </div>

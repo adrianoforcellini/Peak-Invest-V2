@@ -1,35 +1,37 @@
 <section class="users-list-page">
-  <div class="users-list-bk">
-    <div class="users-list-bk-transparency">
-      <form
-        class="users-list-form"
-        [formGroup]="usersListForm"
-        (submit)="submitForm()"
-      >
-        <label for="value"
-          ><p>
-            Digite um Número Entre 1 e 3 Para Buscar<br /><br />
-            Pelo Investidor, ou 0 Para Trazer Toda a Lista
-          </p> </label
-        ><br />
-        <input
-          type="number"
-          class="users-list-input"
-          formControlName="usersListValue"
-        />
-        <br /><br />
-        <button [disabled]="!usersListForm.valid">Enviar</button>
-      </form>
-      <table class="users-table" border="1">
-        <tr>
-          <td>Key</td>
-          <td>Name</td>
-        </tr>
-        <tr *ngFor="let user of users">
-          <td>{{ user.key }}</td>
-          <td>{{ user.value }}</td>
-        </tr>
-      </table>
+  <div class="users-list-bk-container">
+    <div class="users-list-bk">
+      <div class="users-list-bk-transparency">
+        <form
+          class="users-list-form"
+          [formGroup]="usersListForm"
+          (submit)="submitForm()"
+        >
+          <label for="value"
+            ><p>
+              Digite um Número Entre 1 e 3 Para Buscar<br /><br />
+              Pelo Investidor, ou 0 Para Trazer Toda a Lista
+            </p> </label
+          ><br />
+          <input
+            type="number"
+            class="users-list-input"
+            formControlName="usersListValue"
+          />
+          <br /><br />
+          <button [disabled]="!usersListForm.valid">Enviar</button>
+        </form>
+        <table class="users-table" border="1">
+          <tr>
+            <td>Key</td>
+            <td>Name</td>
+          </tr>
+          <tr *ngFor="let user of users">
+            <td>{{ user.key }}</td>
+            <td>{{ user.value }}</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </section>
