@@ -4,4 +4,25 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 5%;
+}
+
+.calculation-bk {
+  background-image: url("https://www.peakinvest.com.br/wp-content/uploads/2019/03/imagem_empresa.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.calculation-bk-transparency {
+  background-color: rgba(255, 255, 0, 0.212);
+  color: white;
+  height: 100vh;
+  width: 63.5vw;
+  margin-left: 18%
+}
+
+.calculation-page {
+  background-color: black;
+  font-size: 20px;
+  margin-top: -3%;
 }
