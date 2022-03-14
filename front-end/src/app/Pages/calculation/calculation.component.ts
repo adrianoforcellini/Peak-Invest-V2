@@ -33,6 +33,7 @@ export class CalculationComponent {
   }
 
   async Post() {
+    console.log(this.baseUrl)
     await fetch(this.baseUrl, {
       method: 'POST',
       headers: {
