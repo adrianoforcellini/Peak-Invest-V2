@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/adrianwarrior/Desktop/TRYBE/Peadk-teste/Peak-Invest/back-end/back-end.csproj": {}
+    "/home/adrianwarrior/Trybe/Peake Invest/Peak-Invest/back-end/back-end.csproj": {}
   },
   "projects": {
-    "/home/adrianwarrior/Desktop/TRYBE/Peadk-teste/Peak-Invest/back-end/back-end.csproj": {
+    "/home/adrianwarrior/Trybe/Peake Invest/Peak-Invest/back-end/back-end.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/adrianwarrior/Desktop/TRYBE/Peadk-teste/Peak-Invest/back-end/back-end.csproj",
+        "projectUniqueName": "/home/adrianwarrior/Trybe/Peake Invest/Peak-Invest/back-end/back-end.csproj",
         "projectName": "back-end",
-        "projectPath": "/home/adrianwarrior/Desktop/TRYBE/Peadk-teste/Peak-Invest/back-end/back-end.csproj",
+        "projectPath": "/home/adrianwarrior/Trybe/Peake Invest/Peak-Invest/back-end/back-end.csproj",
         "packagesPath": "/home/adrianwarrior/.nuget/packages/",
-        "outputPath": "/home/adrianwarrior/Desktop/TRYBE/Peadk-teste/Peak-Invest/back-end/obj/",
+        "outputPath": "/home/adrianwarrior/Trybe/Peake Invest/Peak-Invest/back-end/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/adrianwarrior/.nuget/NuGet/NuGet.Config"
