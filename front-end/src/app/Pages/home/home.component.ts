@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent {
 
   constructor() { }
+  private readonly HOME_BASE_URL = environment.HOME_BASE_URL
 
   navigateToList(){
-    window.location.href = "http://localhost:4200/userslist";
+    window.location.href = `${this.HOME_BASE_URL}/userslist`;
   } 
-  
+
   navigateToCalculation(){
-  window.location.href="http://localhost:4200/calculation"
+  window.location.href=`${this.HOME_BASE_URL}/calculation`
   }
 
 }
