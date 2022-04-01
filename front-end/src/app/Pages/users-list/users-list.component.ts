@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-users-list',
@@ -12,24 +13,9 @@ export class UsersListComponent {
 
   private readonly API_BASE_URL = environment.API_BASE_URL
   public usersListForm: FormGroup;
-  public users = [
-    [
-      {
-        "key": 1,
-        "value": "AdrianWarrior"
-      },
-      {
-        "key": 2,
-        "value": "AnaShine"
-      },
-      {
-        "key": 3,
-        "value": "ArnaMaster"
-      }
-    ]
-  ]
-    ;
-  constructor(private fb: FormBuilder) {
+  public users ;
+
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.createForm();
   }
 
@@ -51,15 +37,12 @@ export class UsersListComponent {
     return this.getByKey(keyNumber)
   }
 
-  async getByKey(key) {
-    await fetch(`${this.API_BASE_URL}/${key}`)
-      .then(response => response.text())
-      .then(result => this.users = [JSON.parse(result)])
+  getByKey(key) {
+    this.http.get<[]>(`${this.API_BASE_URL}/${key}`).subscribe((user) => this.users = [user])
+
   }
-  async getAll() {
-    await fetch(this.API_BASE_URL)
-      .then(response => response.text())
-      .then(result => this.users = JSON.parse(result))
-    console.log(this.users);
+
+   getAll() {
+    this.http.get<[]>(this.API_BASE_URL).subscribe((users) => this.users = users)
   }
 }
