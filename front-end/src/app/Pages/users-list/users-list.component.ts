@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 
 export class UsersListComponent {
 
-  private API_BASE_URL = environment.API_BASE_URL
+  private readonly API_BASE_URL = environment.API_BASE_URL
   public usersListForm: FormGroup;
   public users = [
     [

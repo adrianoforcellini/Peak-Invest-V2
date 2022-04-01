@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 export class CalculationComponent {
 
   public calculationForm: FormGroup;
-  public API_BASE_URL = environment.API_BASE_URL
+  private readonly API_BASE_URL = environment.API_BASE_URL
   public totalValue = 0;
 
   constructor(private fb: FormBuilder, private http: HttpClient
