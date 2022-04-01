@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 
 export class UsersListComponent {
 
-  private baseUrl = environment.baseUrl
+  private API_BASE_URL = environment.API_BASE_URL
   public usersListForm: FormGroup;
   public users = [
     [
@@ -52,12 +52,12 @@ export class UsersListComponent {
   }
 
   async getByKey(key) {
-    await fetch(`https://localhost:7042/${key}`)
+    await fetch(`${this.API_BASE_URL}/${key}`)
       .then(response => response.text())
       .then(result => this.users = [JSON.parse(result)])
   }
   async getAll() {
-    await fetch(`https://localhost:7042`)
+    await fetch(this.API_BASE_URL)
       .then(response => response.text())
       .then(result => this.users = JSON.parse(result))
     console.log(this.users);

@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 export class CalculationComponent {
 
   public calculationForm: FormGroup;
-  public baseUrl = environment.baseUrl
+  public API_BASE_URL = environment.API_BASE_URL
   public totalValue = 0;
 
   constructor(private fb: FormBuilder, private http: HttpClient
@@ -33,8 +33,8 @@ export class CalculationComponent {
   }
 
   async Post() {
-    console.log(this.baseUrl)
-    await fetch(this.baseUrl, {
+    console.log(this.API_BASE_URL)
+    await fetch(this.API_BASE_URL, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
