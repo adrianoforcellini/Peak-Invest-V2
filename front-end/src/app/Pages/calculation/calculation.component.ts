@@ -1,53 +1,36 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { Component } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { environment } from "src/environments/environment";
+import { map, take } from "rxjs/operators";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './calculation.component.html',
-  styleUrls: ['./calculation.component.css']
+  selector: "app-root",
+  templateUrl: "./calculation.component.html",
+  styleUrls: ["./calculation.component.css"],
 })
-
 export class CalculationComponent {
-
   public calculationForm: FormGroup;
-  private readonly API_BASE_URL = environment.API_BASE_URL
-  public totalValue = 0;
+  private readonly API_BASE_URL = environment.API_BASE_URL;
+  public totalValue;
 
-  constructor(private fb: FormBuilder, private http: HttpClient
-  ) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.createForm();
   }
 
   createForm() {
     this.calculationForm = this.fb.group({
-      installments: ['', Validators.required],
-      value: ['', Validators.required]
+      installments: ["", Validators.required],
+      value: ["", Validators.required],
     });
   }
 
   calculationSubmit() {
     this.Post();
-
   }
 
-  async Post() {
-    console.log(this.API_BASE_URL)
-    await fetch(this.API_BASE_URL, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(this.calculationForm.value)
-    }).
-      then(response => response.json()).
-      then(result => this.totalValue = result)
+  Post() {
+    const body = this.calculationForm.value
+    this.http.post(this.API_BASE_URL, body).subscribe(result => this.totalValue = result)
   }
-
-
 }
-
-
-

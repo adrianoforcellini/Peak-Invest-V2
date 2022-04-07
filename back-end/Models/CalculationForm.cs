@@ -8,7 +8,6 @@ namespace back_end.Controllers
     {
       this.installments = installments;
       this.value = value;
-
     }
   }
 }

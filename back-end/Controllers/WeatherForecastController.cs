@@ -25,7 +25,7 @@ public class WeatherForecastController : ControllerBase
   public double CalculateValue([FromBody] CalculationForm calculationForm)
 
   {
-    System.Console.WriteLine(calculationForm);
+    System.Console.WriteLine(calculationForm.installments);
     int installments = calculationForm.installments;
     double value = calculationForm.value;
     double result = (installments * value) * 1.05;

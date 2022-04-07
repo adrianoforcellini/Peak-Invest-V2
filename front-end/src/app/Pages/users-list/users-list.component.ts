@@ -45,4 +45,5 @@ export class UsersListComponent {
    getAll() {
     this.http.get<[]>(this.API_BASE_URL).subscribe((users) => this.users = users)
   }
+  
 }
