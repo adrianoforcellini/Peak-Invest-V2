@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +6,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class AppComponent   {
+  title = 'Peak Invest';
 }
